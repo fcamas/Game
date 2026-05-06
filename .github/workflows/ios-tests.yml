@@ -15,5 +15,6 @@ jobs:
       - name: Run XCTest
         run: |
           xcodebuild test \
-            -scheme Game\
+            -project Game.xcodeproj \
+            -scheme Game \
             -destination 'platform=iOS Simulator,name=iPhone 15'
