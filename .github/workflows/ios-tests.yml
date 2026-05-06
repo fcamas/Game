@@ -1,0 +1,19 @@
+name: iOS Tests Pipeline
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run XCTest
+        run: |
+          xcodebuild test \
+            -scheme Game\
+            -destination 'platform=iOS Simulator,name=iPhone 15'
